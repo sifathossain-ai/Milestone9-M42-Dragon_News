@@ -1,6 +1,5 @@
 import React from 'react';
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { Link, NavLink } from 'react-router-dom';
 
 const SocialLogin = () => {
     return (
@@ -11,10 +10,10 @@ const SocialLogin = () => {
                     <FaGoogle></FaGoogle>
                     Login with Google
                 </button>
-                <Link to={'/auth/login'} className='btn font-normal'>
+                <button className='btn font-normal'>
                     <FaGithub></FaGithub>
                     Login with Github
-                </Link>
+                </button>
             </div>
         </div>
     );
