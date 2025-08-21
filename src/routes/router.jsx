@@ -4,6 +4,7 @@ import CategoryNews from "../pages/CategoryNews";
 import AuthLayout from "../layouts/AuthLayout";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import Asepase from "../pages/Asepase";
 
 const router = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
                 element: <Register></Register>
             }
         ]
+    },
+    {
+        path: '/asepase',
+        element: <Asepase></Asepase>
     },
     {
         path: '*',
