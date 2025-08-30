@@ -1,10 +1,11 @@
 import { FaRegEye, FaStar } from "react-icons/fa";
 import { FiBookmark } from "react-icons/fi";
 import { GoShareAndroid } from "react-icons/go";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const NewsCard = ({ news }) => {
-    const { title, author, image_url, rating, total_view, details } = news;
+    // console.log(news);
+    const { title, author, image_url, rating, total_view, details, _id } = news;
 
     return (
         <div className="card bg-base-100 border rounded-md mb-6">
@@ -42,9 +43,9 @@ const NewsCard = ({ news }) => {
                 {details.length > 150 ? (
                     <>
                         {details.slice(0, 150)}...
-                        <span className="text-orange-500 font-semibold cursor-pointer">
+                        <Link to={`/news/${_id}`} className="text-orange-500 font-semibold cursor-pointer">
                             {" "}Read More
-                        </span>
+                        </Link>
                     </>) : (details)
                 }
             </div>
@@ -61,7 +62,7 @@ const NewsCard = ({ news }) => {
                     <span>{total_view}</span>
                 </div>
             </div>
-            
+
         </div>
     );
 };

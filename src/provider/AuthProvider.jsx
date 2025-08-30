@@ -8,14 +8,14 @@ const AuthProvider = ({ children }) => {
 
     const auth = getAuth(app);
     const [user, setUser] = useState(null);
-    console.log(user);
+    // console.log(user);
 
     const createNewUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     const logIn = (email, password) => {
-        return signInWithEmailAndPassword (auth, email, password);
+        return signInWithEmailAndPassword(auth, email, password);
     }
 
     const logOut = () => {
@@ -35,7 +35,7 @@ const AuthProvider = ({ children }) => {
             setUser(currentUser);
         })
         return () => observer;
-    },[]) 
+    }, [])
 
     return (
         <AuthContext.Provider value={AuthInfo}>

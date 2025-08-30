@@ -18,10 +18,16 @@ const router = createBrowserRouter([
             {
                 path: "/category/:id",
                 element: <CategoryNews></CategoryNews>,
-                loader: ({params}) => fetch(`https://openapi.programming-hero.com/api/news/category/${params.id}`)
+                loader: ({ params }) => fetch(`https://openapi.programming-hero.com/api/news/category/${params.id}`)
             },
         ]
     },
+
+    {
+        path: '/news/:id',
+        element: <h2>Hello World!</h2>
+    },
+
     {
         path: '/auth',
         element: <AuthLayout></AuthLayout>,
@@ -36,14 +42,17 @@ const router = createBrowserRouter([
             }
         ]
     },
+
     {
         path: '/asepase',
         element: <Asepase></Asepase>
     },
+
     {
         path: '*',
         element: <h1>Error</h1>
     }
+
 ])
 
 export default router;
